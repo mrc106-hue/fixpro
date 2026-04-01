@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-barlow: 'Barlow Condensed', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --orange: #FF6B00;
+  --gold: #FFB800;
+  --bg: #080808;
+  --card: #111111;
+  --border: #1E1E1E;
+  --text: #F5F5F0;
+  --muted: #888888;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ─────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--orange); }
+
+/* ── Typography ────────────────────────── */
+.font-display { font-family: var(--font-barlow); }
+
+/* ── Gradient text ─────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #FF6B00, #FFB800);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── Glass card ────────────────────────── */
+.glass-card {
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 107, 0, 0.1);
+  border-radius: 16px;
+}
+
+/* ── Orange glow button ────────────────── */
+.btn-orange {
+  background: linear-gradient(135deg, #FF6B00, #FF9500);
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-inter);
+  text-decoration: none;
+}
+.btn-orange:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255, 107, 0, 0.45);
+}
+
+/* ── Plan badges ───────────────────────── */
+.badge-vip {
+  background: linear-gradient(135deg, #FFB800, #FF6B00);
+  color: #000;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+.badge-premium {
+  background: rgba(255, 107, 0, 0.15);
+  color: #FF6B00;
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.badge-estandar {
+  background: rgba(255,255,255,0.06);
+  color: #5B8DEF;
+  border: 1px solid rgba(91,141,239,0.3);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.badge-gratis {
+  background: rgba(255,255,255,0.04);
+  color: #666;
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Star rating ───────────────────────── */
+.star-fill { color: #FFB800; }
+.star-empty { color: #2a2a2a; }
+
+/* ── Section heading ───────────────────── */
+.section-title {
+  font-family: var(--font-barlow);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--text);
+}
+
+/* ── Orange separator ──────────────────── */
+.sep-orange {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #FF6B00, #FFB800);
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
+
+/* ── Animated particles ────────────────── */
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
+  33%       { transform: translateY(-30px) translateX(15px) scale(1.1); opacity: 1; }
+  66%       { transform: translateY(-15px) translateX(-10px) scale(0.9); opacity: 0.8; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(255,107,0,0.4); }
+  50%       { box-shadow: 0 0 28px rgba(255,107,0,0.8), 0 0 60px rgba(255,107,0,0.3); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes mapPin {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-4px) scale(1.15); }
+}
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
