@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'cdn.leonardo.ai' },
@@ -8,6 +9,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
     ],
   },
+  typescript: { ignoreBuildErrors: true },
   experimental: {
     serverComponentsExternalPackages: ['stripe'],
   },

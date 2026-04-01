@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import { Wrench } from 'lucide-react'
 import { SECTORES } from '@/lib/data'

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+'use client'
 import Link from 'next/link'
 import { ArrowLeft, Filter, MapPin, Star } from 'lucide-react'
 import ProfessionalCard from '@/components/ProfessionalCard'
