@@ -15,14 +15,6 @@ function getComunidadForProvincia(provincia: string) {
   return COMUNIDADES.find(c => c.provincias.some(p => p.toLowerCase().replace(/\s+/g, '-') === provincia || p === label))
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const label = labelFromSlug(params.provincia)
-  return {
-    title: `Profesionales del Hogar en ${label} | FixPro`,
-    description: `Encuentra fontaneros, electricistas, carpinteros y más profesionales verificados en ${label}. Contacto directo, valoraciones reales y precios transparentes.`,
-  }
-}
-
 export default function ProvinciaPage({ params }: Props) {
   const label     = labelFromSlug(params.provincia)
   const comunidad = getComunidadForProvincia(params.provincia)
