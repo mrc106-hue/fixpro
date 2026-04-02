@@ -6,15 +6,6 @@ import { SECTORES, TODAS_PROVINCIAS, MOCK_PROFESIONALES } from '@/lib/data'
 
 interface Props { params: { sector: string } }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const s = SECTORES.find(x => x.id === params.sector)
-  const label = s?.label || params.sector
-  return {
-    title:       `${label} en España | Profesionales Verificados | FixPro`,
-    description: `Encuentra los mejores ${label.toLowerCase()} de España. Directorio con profesionales verificados, fotos, valoraciones y contacto directo.`,
-  }
-}
-
 export default function SectorPage({ params }: Props) {
   const sector   = SECTORES.find(s => s.id === params.sector)
   const label    = sector?.label || params.sector
